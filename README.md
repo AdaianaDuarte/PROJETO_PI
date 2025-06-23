@@ -1,4 +1,4 @@
-# 📁 Projeto Integrador - Formulário de Cadastro: "Last Seven"
+# 📁 Projeto Integrador - Sistema de Cadastro: "Last Seven"
 
 Este repositório contém o código-fonte e a estrutura do projeto **Last Seven**, um site desenvolvido como parte do Projeto Integrador do curso técnico em Informática (SENAC - Porto Velho, RO). O sistema tem como objetivo o **cadastro de usuários e gerenciamento de contatos** de clientes que solicitam serviços de programação.
 
@@ -55,3 +55,51 @@ Este repositório contém o código-fonte e a estrutura do projeto **Last Seven*
 ├── java/
 │   └── AplicativoDesktop.java
 └── README.md
+```
+
+---
+
+## 📂 Banco de Dados
+
+- Nome: `lastseven_db`
+- Tabela: `cadastros`
+- Campos: `id`, `nome`, `email`, `servico`, `mensagem`, `status`, `data_envio`
+
+O script para criação do banco está na pasta `sql/`.
+
+---
+
+## ▶️ Como Executar o Projeto
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seuusuario/last-seven.git
+   ```
+
+2. Importe o banco de dados MySQL com o arquivo `lastseven_db.sql`.
+
+3. Configure os dados de conexão no arquivo `php/conectar.php`.
+
+4. Inicie um servidor local (como XAMPP, WAMP ou PHP Server) e abra o `index.html` no navegador.
+
+5. Para usar o aplicativo Java:
+   - Compile e execute `AplicativoDesktop.java`
+   - Certifique-se de que o banco esteja rodando e com as credenciais corretas
+
+---
+
+## 👥 Equipe
+
+- Adaiana Duarte (Scrum Master / Planejamento)
+- Vinícius Moreira (Front-End & Back-End)
+- Eduarda Pinheiro (Validação & Testes)
+- Kléber Lucas (Banco de Dados)
+- Gean Greguy (Banco de Dados)
+- Nicholas Bollate (Documentação)
+- João Silva (Documentação)
+
+---
+
+## 📜 Licença
+
+Este projeto é apenas para fins educacionais e não possui fins comerciais.
