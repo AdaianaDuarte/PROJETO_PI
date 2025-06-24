@@ -1,0 +1,113 @@
+
+\documentclass[12pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+
+\title{Documentação Técnica - Projeto MVC}
+\author{Equipe Last Seven}
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Last Seven}
+\lhead{Documentação Técnica}
+\rfoot{\thepage}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+\begin{itemize}
+  \item \textbf{Nome do Projeto:} Last Seven Portfolio Website
+  \item \textbf{Descrição:} Website desenvolvido pela equipe Last Seven com o objetivo de apresentar um portfólio profissional individual de cada um dos 7 integrantes da empresa.
+  \item \textbf{Objectivo do Sistema:} Permitir que clientes conheçam o trabalho da equipe Last Seven e possam solicitar serviços através de um formulário de contacto.
+  \item \textbf{Tecnologias Utilizadas:} HTML, CSS, JavaScript, PHP, MySQL.
+  \item \textbf{Arquitectura Utilizada:} MVC (Model-View-Controller)
+\end{itemize}
+
+\section{Requisitos do Sistema}
+
+\subsection{Requisitos Funcionais}
+\begin{itemize}
+  \item RF01 – O sistema deve exibir o portfólio de cada integrante.
+  \item RF02 – O sistema deve permitir o envio de mensagens via formulário de contacto.
+  \item RF03 – O sistema deve armazenar as mensagens dos clientes na base de dados.
+\end{itemize}
+
+\subsection{Requisitos Não-Funcionais}
+\begin{itemize}
+  \item RNF01 – O sistema deve estar disponível 24 horas por dia.
+  \item RNF02 – O sistema deve ser responsivo.
+\end{itemize}
+
+\section{Estrutura de Pastas (Arquitectura do Projeto)}
+\begin{lstlisting}[language=bash]
+/raiz-do-projeto
+│
+├── /model/         ← Regras de negócio, conexão com a base de dados
+├── /view/          ← Interfaces visuais (HTML/CSS)
+├── /controller/    ← Lógica de controle e ponte entre view e model
+├── /config/        ← Configurações do sistema e da base de dados
+├── /public/        ← Recursos acessíveis ao utilizador (imagens, scripts, etc.)
+└── index.php       ← Ponto de entrada da aplicação
+\end{lstlisting}
+
+\section{Descrição dos Componentes}
+
+\subsection{Model}
+Responsável por lidar com os dados, fazer conexões com a base de dados e aplicar regras de negócio.
+
+Exemplo de classes model: \texttt{Usuario.php}, \texttt{Projeto.php}, \texttt{MensagemContato.php}
+
+\subsection{View}
+Camada de apresentação, exibe os dados ao utilizador e recebe interações.
+
+Exemplo de ficheiros: \texttt{home.php}, \texttt{portfolio.php}, \texttt{formulario-contato.php}
+
+\subsection{Controller}
+Recebe as requisições da view, interage com o model e devolve uma resposta adequada.
+
+Exemplo de controladores: \texttt{UsuarioController.php}, \texttt{ContatoController.php}
+
+\section{Fluxo de Funcionamento (MVC)}
+\begin{enumerate}
+  \item O utilizador interage com a \textbf{View}.
+  \item A \textbf{View} envia os dados ao \textbf{Controller}.
+  \item O \textbf{Controller} processa a lógica e chama o \textbf{Model}, se necessário.
+  \item O \textbf{Model} interage com a base de dados e retorna os dados ao \textbf{Controller}.
+  \item O \textbf{Controller} atualiza a \textbf{View} com os resultados.
+\end{enumerate}
+
+\section{Base de Dados}
+\textbf{Tabelas principais:}
+\begin{itemize}
+  \item \texttt{usuarios(id, nome, email, senha)}
+  \item \texttt{portfolios(id, usuario_id, descricao, imagem)}
+  \item \texttt{mensagens(id, nome, email, assunto, mensagem, data\_envio)}
+\end{itemize}
+
+\section{Casos de Uso}
+(Adicionar diagramas ou descrições dos principais casos de uso do sistema.)
+
+\section{Testes}
+Testes manuais realizados para verificar funcionamento do formulário e exibição do portfólio.
+
+\section{Conclusão}
+O sistema apresenta um site funcional com área de portfólio individual e formulário de contacto operante via backend em PHP com banco de dados MySQL.
+
+\section{Anexos}
+Capturas de tela, códigos relevantes, link do repositório no GitHub.
+
+\end{document}
